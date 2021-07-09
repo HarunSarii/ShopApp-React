@@ -1,23 +1,22 @@
-import React, { useState, useHistory } from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
-const ProductCard = ({ title, price, image, product }) => {
+const ProductCard = ({ product }) => {
   const [badgeCount, setBadgeCount] = useState(1);
 
-  // const history = useHistory();
-  // const viewDetails = () => {
-  //   history.push({
-  //     pathname: "/detailPage",
-  //     product: product,
-  //   });
-  // };
+  const history = useHistory();
+  const viewDetails = () => {
+    history.push("/detailPage");
+  };
   return (
     <div className="product">
-      <img src={image} alt="product" />
+      <img src={product?.image} alt="product" />
       <div className="product-info">
-        <p>{title}</p>
-        <p>{price}$</p>
+        <p>{product?.title}</p>
+        <p>{product?.price}$</p>
+        <h1>{badgeCount}</h1>
         <IconButton
           to="/DetailPage"
           color="primary"
@@ -29,7 +28,7 @@ const ProductCard = ({ title, price, image, product }) => {
             }}
           />
         </IconButton>
-        {/* <button onClick={viewDetails}>View Details</button> */}
+        <button onClick={viewDetails}>View Details</button>
       </div>
     </div>
   );

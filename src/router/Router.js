@@ -11,7 +11,7 @@ const AppRouter = () => {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/" component={HomePage} />
+        <Route path="/" exact component={HomePage} />
         <Route path="/cartPage" component={CartPage} />
         <Route path="/detailPage" component={DetailPage} />
       </Switch>

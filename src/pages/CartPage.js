@@ -13,9 +13,9 @@ const CartPage = () => {
           <td>
             <div className="cart-info">
               <div>
-                <img src={product.imageURL} alt="" />
+                {/* <img src={product.imageURL} alt="" />
                 <p>{product.name}</p>
-                <p>{product.price}</p>
+                <p>{product.price}</p> */}
               </div>
             </div>
           </td>
