@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+.App {
+  width: 100vw;
+  height: 100vh;
+}
 
 body {
   background-color: #eee;
@@ -118,4 +122,62 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 20rem;
+  background-color: #2f4050;
+}
+
+.sidebar-list {
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-list .row {
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  /* border: 1px solid black; */
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-list .row:hover {
+  cursor: pointer;
+  background-color: #293846;
+}
+.sidebar-list #active {
+  background-color: #293846;
+}
+
+.row #icon {
+  flex: 30%;
+  display: grid;
+  place-items: center;
+}
+.row #title {
+  flex: 70%;
+}
+
+/* Detail Page */
+.details {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-container {
+  align-items: center;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
 }

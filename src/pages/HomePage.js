@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import axios from "axios";
+import Sidebar from "../components/sidebar/Sidebar";
 
-const FEATURED_API = "https://limitless-lake-55070.herokuapp.com/product/";
-const SEARCH_API = "https://limitless-lake-55070.herokuapp.com/product/";
+const FEATURED_API = "https://fakestoreapi.com/products";
+const SEARCH_API = "https://fakestoreapi.com/products?&query";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -14,13 +15,11 @@ const HomePage = () => {
     getProducts(FEATURED_API);
   }, []);
 
-  const getProducts = () => {
-    axios
-      .get("https://limitless-lake-55070.herokuapp.com/product/")
-      .then((res) => {
-        setProducts(res.data);
-        console.log("products:::", setProducts(res.data));
-      });
+  const getProducts = (API) => {
+    axios.get(API).then((res) => {
+      setProducts(res.data);
+      console.log("products:::", setProducts(res.data));
+    });
   };
 
   const handleSearch = (e) => {
@@ -40,6 +39,7 @@ const HomePage = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
+
       <div className="product-container">
         {products?.map((product) => (
           <ProductCard key={product.id} {...product} />
