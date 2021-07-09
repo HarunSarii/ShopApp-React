@@ -1,23 +1,34 @@
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Sidebar from "./components/sidebar/Sidebar";
-import DetailPage from "./components/DetailPage";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 import AppRouter from "./router/Router";
-// import ResponsiveDrawer from "./components/drawer/Drawer";
+import { ProductContext } from "./context/ProductContext";
+import HomePage from "./pages/HomePage";
+
+const FEATURED_API = "https://fakestoreapi.com/products";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  console.log("products are:", products);
+
+  const getProducts = (API) => {
+    axios.get(API).then((res) => {
+      setProducts(res.data);
+      console.log("products:::", setProducts(res.data));
+    });
+  };
+
+  useEffect(() => {
+    getProducts(FEATURED_API);
+  }, []);
+
   return (
-    <div className="App">
-      {/* <Navbar />
-      <HomePage />
-      <Footer />
-      <Sidebar />
-      <DetailPage /> */}
-      <AppRouter />
-      {/* <ResponsiveDrawer /> */}
-    </div>
+    <ProductContext.Provider value={{ products }}>
+      <div className="App">
+        <AppRouter />
+      </div>
+    </ProductContext.Provider>
   );
 }
 

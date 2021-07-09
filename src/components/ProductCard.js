@@ -8,7 +8,10 @@ const ProductCard = ({ product }) => {
 
   const history = useHistory();
   const viewDetails = () => {
-    history.push("/detailPage");
+    history.push({
+      pathname: "/detailPage",
+      product: product,
+    });
   };
   return (
     <div className="product">

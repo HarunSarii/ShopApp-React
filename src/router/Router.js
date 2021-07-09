@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import CartPage from "../pages/CartPage";
 import Navbar from "../components/Navbar";
 import DetailPage from "../components/DetailPage";
+import Footer from "../components/Footer";
 
 import React from "react";
 
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="/cartPage" component={CartPage} />
         <Route path="/detailPage" component={DetailPage} />
       </Switch>
+      <Footer />
     </Router>
   );
 };

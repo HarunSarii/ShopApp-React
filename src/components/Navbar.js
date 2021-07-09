@@ -40,7 +40,7 @@ const Navbar = () => {
             </button>
 
             <IconButton aria-label="cart">
-              <StyledBadge badgeContent={1} color="secondary">
+              <StyledBadge badgeContent={0} color="secondary">
                 <ShoppingCartIcon
                   className="dropbtn"
                   style={{ width: "3rem", height: "3rem" }}
