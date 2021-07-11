@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import AppRouter from "./router/Router";
-import { ProductContext } from "./context/ProductContext";
+import { ProductContextProvider } from "./context/ProductContext";
 import HomePage from "./pages/HomePage";
+import { Drawer } from "@material-ui/core";
+// import Sidebar from "./components/sidebar/Sidebar";
 
 const FEATURED_API = "https://fakestoreapi.com/products";
 
@@ -24,11 +26,13 @@ function App() {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ products }}>
+    <ProductContextProvider>
       <div className="App">
+        {/* <Drawer /> */}
         <AppRouter />
+        {/* <Sidebar /> */}
       </div>
-    </ProductContext.Provider>
+    </ProductContextProvider>
   );
 }
 

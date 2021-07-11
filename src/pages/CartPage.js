@@ -1,26 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
+import Button from "@material-ui/core/Button";
+import { ProductContext } from "../context/ProductContext";
 
-const CartPage = () => {
+const CartPage = ({ product }) => {
+  // const { product } = useContext(ProductContext);
+  const { products, addProduct } = React.useContext(ProductContext);
+
   return (
     <div>
       <table>
         <tr>
-          <th>Product</th>
+          <th>Title</th>
           <th>Quantity</th>
           <th>Price</th>
         </tr>
-        <tr>
-          <td>
-            <div className="cart-info">
-              <div>
-                {/* <img src={product?.image} alt="" />
-                <p>{product?.name}</p>
-                <p>{product?.price}</p> */}
-              </div>
-            </div>
-          </td>
-        </tr>
+        {products?.map((product) => {
+          return (
+            <tr>
+              <td>{product.title}</td>
+              <td></td>
+              <td>{product.price}</td>
+            </tr>
+          );
+        })}
       </table>
+      <Button variant="contained" color="primary">
+        Primary
+      </Button>
+      <Button variant="contained" color="secondary">
+        Remove Item
+      </Button>
     </div>
   );
 };

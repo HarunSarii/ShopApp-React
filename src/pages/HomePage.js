@@ -4,26 +4,26 @@ import axios from "axios";
 import Sidebar from "../components/sidebar/Sidebar";
 import { ProductContext } from "../context/ProductContext";
 
-// const FEATURED_API = "https://fakestoreapi.com/products";
+const FEATURED_API = "https://fakestoreapi.com/products";
 // const SEARCH_API = "https://fakestoreapi.com/products?&query";
 
 const HomePage = () => {
-  const { products } = useContext(ProductContext);
+  // const { product } = useContext(ProductContext);
 
-  // const [products, setProducts] = useState([]);
-  // console.log("products are:", products);
+  const [products, setProducts] = useState([]);
+  console.log("products are:", products);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // useEffect(() => {
-  //   getProducts(FEATURED_API);
-  // }, []);
+  useEffect(() => {
+    getProducts(FEATURED_API);
+  }, []);
 
-  // const getProducts = (API) => {
-  //   axios.get(API).then((res) => {
-  //     setProducts(res.data);
-  //     console.log("products:::", setProducts(res.data));
-  //   });
-  // };
+  const getProducts = (API) => {
+    axios.get(API).then((res) => {
+      setProducts(res.data);
+      console.log("products:::", setProducts(res.data));
+    });
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();

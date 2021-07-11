@@ -11,9 +11,9 @@ const DetailPage = (props) => {
       </div>
       <div className="detail-container">
         <p>{product?.title}</p>
-        <p>price</p>
-        <p>category</p>
-        <p>description</p>
+        <p>{product?.price}</p>
+        <p>{product?.category}</p>
+        <p>{product?.description}</p>
         <button>Add to Chart</button>
       </div>
     </div>

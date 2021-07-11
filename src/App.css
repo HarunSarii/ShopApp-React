@@ -84,13 +84,18 @@ body {
 }
 
 .dropbtn {
+  background-color: rgb(199, 191, 191);
+}
+
+/* .dropbtn {
   background-color: #04aa6d;
   color: white;
   padding: 16px;
-  font-size: 16px;
+  font-size: 40;
   border: none;
-}
+} */
 
+/*
 .dropdown {
   position: relative;
   display: inline-block;
@@ -122,7 +127,7 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
-}
+} */
 
 /* Sidebar */
 .sidebar {
@@ -177,6 +182,8 @@ body {
 
 .image-container {
   align-items: center;
+  /* width: 10rem;
+  height: 10rem; */
 }
 
 .detail-container {
