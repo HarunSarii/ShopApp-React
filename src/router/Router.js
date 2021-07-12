@@ -6,11 +6,13 @@ import DetailPage from "../components/DetailPage";
 import Footer from "../components/Footer";
 
 import React from "react";
+import Sidebar from "../components/sidebar/Sidebar";
 
 const AppRouter = () => {
   return (
     <Router>
       <Navbar />
+      {/* <Sidebar /> */}
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/cartPage" component={CartPage} />

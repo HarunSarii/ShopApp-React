@@ -9,7 +9,7 @@ const ProductContextProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider value={{ products, addProduct }}>
+    <ProductContext.Provider value={{ products, addProduct, setProducts }}>
       {children}
     </ProductContext.Provider>
   );

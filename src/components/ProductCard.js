@@ -17,8 +17,8 @@ const ProductCard = ({ product }) => {
   };
 
   React.useEffect(() => {
-    console.log(products);
-  }, [products]);
+    // console.log(products);
+  }, []);
 
   const addToCart = () => {
     addProduct(product);
@@ -30,7 +30,7 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <p>{product?.title}</p>
         <p>{product?.price}$</p>
-        <h1>{badgeCount}</h1>
+        {/* <h1>{badgeCount}</h1> */}
         <IconButton
           to="/DetailPage"
           color="primary"

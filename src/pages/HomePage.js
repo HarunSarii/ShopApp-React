@@ -21,7 +21,6 @@ const HomePage = () => {
   const getProducts = (API) => {
     axios.get(API).then((res) => {
       setProducts(res.data);
-      console.log("products:::", setProducts(res.data));
     });
   };
 

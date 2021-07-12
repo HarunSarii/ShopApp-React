@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { SidebarData } from "./SidebarData";
 
+
 const Sidebar = () => {
+
+  const [sidebar, setSidebar] = useState(true);
+
+  const sidebarToggle = () => setSidebar(!sidebar);
+
+
+
   // const handleSearch = (e) => {
   //   e.preventDefault();
   //   getProducts(SEARCH_API + "jewelery");

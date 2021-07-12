@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
+
 import Badge from "@material-ui/core/Badge";
 import { withStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
@@ -21,6 +22,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import FolderIcon from "@material-ui/icons/Folder";
 import DeleteIcon from "@material-ui/icons/Delete";
+import MenuIcon from '@material-ui/icons/Menu';
 import { ProductContext } from "../context/ProductContext";
 
 const StyledBadge = withStyles((theme) => ({
@@ -89,7 +91,11 @@ const Navbar = ({ product }) => {
           <a class="navbar-brand" href="/" style={{ color: "white" }}>
             SHOP-PAGE
           </a>
+          <MenuIcon
+          //  onClick={sidebarToggle}
+             style={{marginLeft: "1rem", marginBottom : '1rem'}} />
           <div className="buttons">
+          
             <button type="button" class="ms-2 btn btn-outline-light">
               Today's Deals
             </button>
@@ -149,21 +155,22 @@ const Navbar = ({ product }) => {
                     </Typography>
                     <div className={classes.demo}>
                       <List dense={dense}>
-                        {products?.map((product) => {
+                        {products.length ? (products?.map((product) => {
                           return (
                             <ListItem>
                               <ListItemAvatar>
                                 <Avatar>
-                                  <FolderIcon />
+                                  <img src={product.image} style={{ width: "3rem", height: "3rem" }} />
+                              
                                 </Avatar>
                               </ListItemAvatar>
                               <ListItemText
                                 primary={product.title}
-                                secondary={product.description}
+                                secondary={product.price}
                               />
                             </ListItem>
                           );
-                        })}
+                        })) : (<p>You don't have any item in your cart!</p>)}
                       </List>
                     </div>
                   </Grid>

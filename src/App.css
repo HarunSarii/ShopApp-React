@@ -16,7 +16,7 @@ body {
 }
 
 .navbar-brand {
-  font-size: 2rem;
+  font-size: 3rem;
   text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .navbar {
   padding: 1rem 3rem;
-  background-color: #0da13e !important;
+  background-color: #076152 !important;
 }
 .buttons {
   display: flex;
@@ -87,6 +87,10 @@ body {
   background-color: rgb(199, 191, 191);
 }
 
+.container-fluid{
+  display: flex;
+  flex-direction: column;
+}
 /* .dropbtn {
   background-color: #04aa6d;
   color: white;
