@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+// import Drawer from './drawer/Drawer'
+import TemporaryDrawer from "./drawer/Drawer";
+
 
 
 import Badge from "@material-ui/core/Badge";
@@ -180,6 +183,7 @@ const Navbar = ({ product }) => {
           </div>
         </div>
       </nav>
+      <TemporaryDrawer />
     </div>
   );
 };

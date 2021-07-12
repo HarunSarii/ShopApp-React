@@ -82,10 +82,10 @@ body {
   outline: none;
   border: none;
 }
-
+/* 
 .dropbtn {
   background-color: rgb(199, 191, 191);
-}
+} */
 
 .container-fluid{
   display: flex;

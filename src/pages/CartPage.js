@@ -5,11 +5,11 @@ import { ProductContext } from "../context/ProductContext";
 const CartPage = ({ product }) => {
   // const [products, setProducts] = useState([])
   // const { product } = useContext(ProductContext);
-  const { products, addProduct, setProducts } = React.useContext(ProductContext);
+  const { products, removeProduct } = React.useContext(ProductContext);
 
-  const removeProduct = () => {
-    setProducts(products.filter((product) => product.id !== product.id ));
-  };
+  // const removeProduct = () => {
+  //   removeProducts(products.filter((product) => product.id !== product.id ));
+  // };
   console.log(product)
   return (
     <div>
@@ -28,8 +28,8 @@ const CartPage = ({ product }) => {
               <td><Button
               onClick={() => removeProduct(product.id)}
               variant="contained" color="secondary">
-        Remove Item
-      </Button></td>
+                Remove Item
+                </Button></td>
               
             </tr>
           );

@@ -8,8 +8,11 @@ const ProductContextProvider = ({ children }) => {
     setProducts([...products, product]);
   };
 
+  const removeProduct = (product) => {
+    setProducts(products.filter((product) => product.id !== product.id ))};
+
   return (
-    <ProductContext.Provider value={{ products, addProduct, setProducts }}>
+    <ProductContext.Provider value={{ products, addProduct, removeProduct }}>
       {children}
     </ProductContext.Provider>
   );

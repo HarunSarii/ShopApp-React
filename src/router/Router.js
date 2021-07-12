@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import CartPage from "../pages/CartPage";
-import Navbar from "../components/Navbar";
+import Navbarr from "../components/Navbarr";
 import DetailPage from "../components/DetailPage";
 import Footer from "../components/Footer";
 
@@ -11,7 +11,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 const AppRouter = () => {
   return (
     <Router>
-      <Navbar />
+      <Navbarr />
       {/* <Sidebar /> */}
       <Switch>
         <Route path="/" exact component={HomePage} />
