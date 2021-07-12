@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard(props) {
+export default function DetailPage(props) {
   const product = props.location.product;
   const classes = useStyles();
 
@@ -77,9 +77,7 @@ export default function MediaCard(props) {
 // import React from "react";
 
 // // import { ProductContext } from "../context/ProductContext";
-
 // // const DetailPage = ({ product }) => {
-
 // //   const { products, addProduct } = React.useContext(ProductContext);
 
 

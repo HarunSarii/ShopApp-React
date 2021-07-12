@@ -9,7 +9,12 @@ const ProductContextProvider = ({ children }) => {
   };
 
   const removeProduct = (product) => {
-    setProducts(products.filter((product) => product.id !== product.id ))};
+    setProducts(products.filter((prd) => {
+      console.log(prd)
+      console.log(product)
+      return prd.id !== product
+    }))
+  };
 
   return (
     <ProductContext.Provider value={{ products, addProduct, removeProduct }}>

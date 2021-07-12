@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { ProductContext } from "../context/ProductContext";
 
 const ProductCard = ({ product }) => {
-  const [badgeCount, setBadgeCount] = useState(1);
-  const { products, addProduct } = React.useContext(ProductContext);
+  const { addProduct } = React.useContext(ProductContext);
 
   const history = useHistory();
   const viewDetails = () => {
@@ -17,7 +16,6 @@ const ProductCard = ({ product }) => {
   };
 
   React.useEffect(() => {
-    // console.log(products);
   }, []);
 
   const addToCart = () => {
@@ -30,7 +28,6 @@ const ProductCard = ({ product }) => {
       <div className="product-info">
         <p>{product?.title}</p>
         <p>{product?.price}$</p>
-        {/* <h1>{badgeCount}</h1> */}
         <IconButton
           to="/DetailPage"
           color="primary"

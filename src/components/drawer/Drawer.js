@@ -1,11 +1,6 @@
 import React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -13,16 +8,15 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import HomeIcon from "@material-ui/icons/Home";
+import { makeStyles } from "@material-ui/core/styles";
 import DevicesIcon from "@material-ui/icons/Devices";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import PregnantWomanIcon from "@material-ui/icons/PregnantWoman";
 import clsx from "clsx";
 import Button from "@material-ui/core/Button";
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles({
   list: {
@@ -35,6 +29,7 @@ const useStyles = makeStyles({
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
+  const history = useHistory();
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -53,6 +48,19 @@ export default function TemporaryDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log(e.currentTarget.id)
+    history.push(`?category=${e.currentTarget.id}`)
+  }
+
+  const drawerTabs =
+    [{ id: 1, label: "Electronics", slug: "electronics" },
+    { id: 2, label: "Jewelery", slug: "jewelery" },
+    { id: 3, label: "Man clothing", slug: "man clothing" },
+    { id: 3, label: "Woman Clothing", slug: "woman clothing" },
+    ]
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -63,16 +71,16 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Electronics", "Jewelery", "Man clothing", "Woman Clothing"].map(
-          (text, index) => (
-            <ListItem button key={text}>
+        {drawerTabs.map(
+          (item, index) => (
+            <ListItem button key={item.id} id={item.slug} onClick={handleClick}>
               <ListItemIcon>
                 {index === 0 ? <DevicesIcon /> : ""}
                 {index === 1 ? <AttachMoneyIcon /> : ""}
                 {index === 2 ? <AccessibilityIcon /> : ""}
                 {index === 3 ? <PregnantWomanIcon /> : ""}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={item.label} />
             </ListItem>
           )
         )}

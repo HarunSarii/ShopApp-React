@@ -1,15 +1,9 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import { ProductContext } from "../context/ProductContext";
 
 const CartPage = ({ product }) => {
-  // const [products, setProducts] = useState([])
-  // const { product } = useContext(ProductContext);
   const { products, removeProduct } = React.useContext(ProductContext);
-
-  // const removeProduct = () => {
-  //   removeProducts(products.filter((product) => product.id !== product.id ));
-  // };
   console.log(product)
   return (
     <div>
@@ -26,17 +20,17 @@ const CartPage = ({ product }) => {
               <td>{product.category}</td>
               <td>{product.price}</td>
               <td><Button
-              onClick={() => removeProduct(product.id)}
-              variant="contained" color="secondary">
+                onClick={() => removeProduct(product.id)}
+                variant="contained" color="secondary">
                 Remove Item
-                </Button></td>
-              
+              </Button></td>
+
             </tr>
           );
         })}
       </table>
-      
-      
+
+
     </div>
   );
 };
