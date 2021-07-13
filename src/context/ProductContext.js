@@ -10,8 +10,8 @@ const ProductContextProvider = ({ children }) => {
 
   const removeProduct = (product) => {
     setProducts(products.filter((prd) => {
-      console.log(prd)
-      console.log(product)
+      // console.log(prd)
+      // console.log(product)
       return prd.id !== product
     }))
   };

@@ -1,5 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+
 import { ProductContext } from "../context/ProductContext";
 
 const CartPage = ({ product }) => {
@@ -21,8 +23,13 @@ const CartPage = ({ product }) => {
               <td>{product.price}</td>
               <td><Button
                 onClick={() => removeProduct(product.id)}
-                variant="contained" color="secondary">
-                Remove Item
+
+                variant="contained"
+                color="secondary"
+                // className={classes.button}
+                startIcon={<DeleteIcon />}
+              >
+                Remove
               </Button></td>
 
             </tr>

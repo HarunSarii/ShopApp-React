@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import IconButton from "@material-ui/core/IconButton";
+import Button from '@material-ui/core/Button';
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { ProductContext } from "../context/ProductContext";
 
@@ -27,7 +28,7 @@ const ProductCard = ({ product }) => {
       <img src={product?.image} alt="product" />
       <div className="product-info">
         <p>{product?.title}</p>
-        <p>{product?.price}$</p>
+        <p>${product?.price}</p>
         <IconButton
           to="/DetailPage"
           color="primary"
@@ -35,7 +36,9 @@ const ProductCard = ({ product }) => {
         >
           <AddShoppingCartIcon onClick={addToCart} />
         </IconButton>
-        <button onClick={viewDetails}>View Details</button>
+        <Button onClick={viewDetails} variant="contained">
+          View Details
+        </Button>
       </div>
     </div>
   );

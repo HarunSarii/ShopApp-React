@@ -7,6 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+
+import { ProductContext } from "../context/ProductContext";
+
 
 const useStyles = makeStyles({
   root: {
@@ -14,15 +18,25 @@ const useStyles = makeStyles({
 
   },
   media: {
-    width: '20rem',
-    height: '30em',
-    alignItems: 'center'
+    height: '30rem',
+    display: 'block',
+    objectFit: 'cover',
+    margin: '20px',
+    width: 'auto',
   },
 });
 
 export default function DetailPage(props) {
+
   const product = props.location.product;
   const classes = useStyles();
+
+  const { addProduct } = React.useContext(ProductContext);
+
+
+  const addToCart = () => {
+    addProduct(product);
+  };
 
   return (
     <Card className={classes.root}>
@@ -42,12 +56,18 @@ export default function DetailPage(props) {
             Category: {product?.category}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Price: {product?.price}$
+            Price: ${product?.price}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button variant="contained" color="secondary">
+        <Button
+          onClick={addToCart}
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          startIcon={<AddShoppingCartIcon />}
+        >
           Add to Cart
         </Button>
 

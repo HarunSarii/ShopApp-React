@@ -230,7 +230,7 @@ export default function Navbar({ product }) {
                     </IconButton>
                     <Link to="/">
                         <Typography className={classes.title} variant="h4" noWrap>
-                            SHOP-PAGE
+                            SHOP
                         </Typography>
                     </Link>
                     <div className={classes.search}>

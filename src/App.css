@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 .App {
   width: 100vw;
@@ -13,6 +15,7 @@ body {
 .root {
   display: flex;
   flex-direction: column;
+  font-family: "Encode Sans SC", sans-serif;
 }
 
 .navbar-brand {
@@ -57,12 +60,18 @@ body {
   padding: 1rem 3rem;
   background-color: #076152 !important;
 }
+
+button {
+  cursor: pointer;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
   height: 50px;
   justify-content: flex-end;
 }
+
 .btn-primary {
   margin-left: 1.5rem;
 }
