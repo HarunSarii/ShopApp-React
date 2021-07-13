@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/ShopApp-React/static/css/main.8bff7941.chunk.css",
+    "main.js": "/ShopApp-React/static/js/main.f7de62b5.chunk.js",
+    "main.js.map": "/ShopApp-React/static/js/main.f7de62b5.chunk.js.map",
+    "runtime-main.js": "/ShopApp-React/static/js/runtime-main.b18c74de.js",
+    "runtime-main.js.map": "/ShopApp-React/static/js/runtime-main.b18c74de.js.map",
+    "static/css/2.4634e51e.chunk.css": "/ShopApp-React/static/css/2.4634e51e.chunk.css",
+    "static/js/2.89937c01.chunk.js": "/ShopApp-React/static/js/2.89937c01.chunk.js",
+    "static/js/2.89937c01.chunk.js.map": "/ShopApp-React/static/js/2.89937c01.chunk.js.map",
+    "index.html": "/ShopApp-React/index.html",
+    "static/css/2.4634e51e.chunk.css.map": "/ShopApp-React/static/css/2.4634e51e.chunk.css.map",
+    "static/css/main.8bff7941.chunk.css.map": "/ShopApp-React/static/css/main.8bff7941.chunk.css.map",
+    "static/js/2.89937c01.chunk.js.LICENSE.txt": "/ShopApp-React/static/js/2.89937c01.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/ShopApp-React/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/loading.11562bdd.gif": "/ShopApp-React/static/media/loading.11562bdd.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b18c74de.js",
+    "static/css/2.4634e51e.chunk.css",
+    "static/js/2.89937c01.chunk.js",
+    "static/css/main.8bff7941.chunk.css",
+    "static/js/main.f7de62b5.chunk.js"
+  ]
+}
