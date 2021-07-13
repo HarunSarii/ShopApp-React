@@ -15,6 +15,7 @@ import { ProductContext } from "../context/ProductContext";
 const useStyles = makeStyles({
   root: {
     maxWidth: '35%',
+    margin: 'auto'
 
   },
   media: {

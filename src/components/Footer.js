@@ -49,8 +49,7 @@ const Footer = () => {
             <Grid.Column width={7}>
               <Header inverted as="h4" content="Footer Header" />
               <p>
-                Extra space for a call to action inside the footer that could
-                help re-engage users.
+                Life is hard enough already. Let us make it a little easier.
               </p>
             </Grid.Column>
           </Grid>

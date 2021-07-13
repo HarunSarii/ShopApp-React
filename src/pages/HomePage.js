@@ -9,13 +9,11 @@ const FEATURED_API = "https://fakestoreapi.com/products";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
-  // console.log("products are:", products);
-
-  // const [searchTerm, setSearchTerm] = useState("");
 
   const params = useParams();
   const [loading, setLoading] = useState(false);
   let location = useLocation()
+
   useEffect(() => {
     if (getSecondPart(location?.search)) {
       getProducts(`${FEATURED_API}/category/${getSecondPart(location?.search)}`);
@@ -40,9 +38,10 @@ const HomePage = () => {
   // console.log(getSecondPart(location?.search))
 
   return (
-    <div>
+    <div >
       {loading ? (
-        <img src={loadingGif} alt="loading" />
+        <div className='loading-image'>
+          <img src={loadingGif} alt="loading" /> </div>
       ) : (
         <div className="product-container">
           {products?.map((product) => (
