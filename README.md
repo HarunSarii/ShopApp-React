@@ -15,4 +15,4 @@ When you click menu item in navbar, there will appear a sidebar from left. There
 
 When you click checkout button in navbar, it will direct you to cart-page. In cart-page, you can see all items in your cart and you can remove any of them.
 
-NOTE: In interview question criterias, it is mentioned that design is not a part of it so not much time spent designing the page. On the other hand, clean code and organized layout took into consideration.
+In project criterias, it is mentioned that design is not a part of it so not much time spent designing the page. On the other hand, clean code and organized layout took into consideration.
